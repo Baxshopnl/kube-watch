@@ -1,5 +1,5 @@
 {
-  "name": "kube-watch",
+  "name": "@baxmusic/kube-watch",
   "version": "0.5.4",
   "description": "Watch Kubernetes resources",
   "main": "./dist/index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/subk/kube-watch.git"
+    "url": "https://github.com/Baxshopnl/kube-watch"
   },
   "keywords": [
     "kubernetes",
@@ -25,14 +25,14 @@
   "author": "max",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/subk/kube-watch/issues"
+    "url": "https://github.com/Baxshopnl/kube-watch/issues"
   },
   "files": [
     "dist",
     "package.json",
     "README.md"
   ],
-  "homepage": "https://github.com/subk/kube-watch#readme",
+  "homepage": "https://github.com/Baxshopnl/kube-watch#readme",
   "devDependencies": {
     "babel-cli": "^6.14.0",
     "babel-preset-es2015": "^6.14.0",

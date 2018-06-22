@@ -2,10 +2,12 @@
 
 [Kubernetes](http://kubernetes.io) Watch API for node.
 
+Forked from [subk/kube-watch](https://github.com/subk/kube-watch)
+
 ## [Installation](#installation)
 
 ```bash
-$ npm i kube-watch
+$ npm i @baxmusic/kube-watch
 ```
 
 ## [Quick start](#quick-start)
@@ -13,7 +15,7 @@ $ npm i kube-watch
 `new KubeWatch(resource, options)` -> `EventEmitter`
 
 ```javascript
-import KubeWatch from 'kube-watch';
+import KubeWatch from '@baxmusic/kube-watch';
 
 const pods = new KubeWatch('pods', {
   url: 'http://kube-api-server'   // Kubernetes API URL
@@ -37,7 +39,7 @@ pods
 
 ## [Watching resources](#watching-resources)
 
-By default, [kube-watch](https://github.com/subk/kube-watch) will first request Kubernetes API to fetch the
+By default, [kube-watch](https://github.com/Baxshopnl/kube-watch) will first request Kubernetes API to fetch the
 last `resourceVersion` for requested resource. See [Kubernetes documentation](https://github.com/kubernetes/kubernetes/blob/master/docs/devel/api-conventions.md#concurrency-control-and-consistency) for more details.  
 If you want to specify `resourceVersion` manually, see [Query Parameters](#query-parameters) section.
 
@@ -90,7 +92,7 @@ const services = new KubeWatch('services', {
 ## [Filtering events](#filtering-events)
 
 You can filter which events will be emitted using `events` option.  
-By default, [kube-watch](https://github.com/subk/kube-watch) will emit all k8s events: `added`, `modified`, `deleted`.
+By default, [kube-watch](https://github.com/Baxshopnl/kube-watch) will emit all k8s events: `added`, `modified`, `deleted`.
 
 ```javascript
 const namespaces = new KubeWatch('namespaces', {
