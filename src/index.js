@@ -139,35 +139,7 @@ export default class extends EventEmitter {
       ...options.request                    // HTTP request options
     }
 
-    // `resourceVersion` is specified, perform request now
-    if (typeof options.resourceVersion !== 'undefined') {
-      get(watchRequest).pipe(stream);
-      return this;
-    }
-
-    // fetch last `resourceVersion` to only get last events
-    const versionRequest = {
-      uri: this.url,
-      json: true,
-      qs: {
-        ...pick(options, queryParameters)
-      },
-      ...options.request
-    }
-
-    get(versionRequest, (err, rs) => {
-      if (err) {
-        throw err;
-      }
-      if (!rs.body || !rs.body.metadata || !rs.body.metadata.resourceVersion) {
-        throw new Error('Could not get `resourceVersion`.\n'
-          + 'Please set it manually or retry.');
-      }
-
-      // watch start at `resourceVersion`
-      watchRequest.qs.resourceVersion = rs.body.metadata.resourceVersion;
-      // perform request, pipe to json stream
-      get(watchRequest).pipe(stream);
-    });
+    get(watchRequest).pipe(stream);
+    return this;
   }
 }
