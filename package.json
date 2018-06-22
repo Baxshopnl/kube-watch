@@ -6,6 +6,7 @@
   "scripts": {
     "prebuild": "rimraf dist && npm install",
     "build": "mkdir -p dist && babel src -o dist/index.js",
+    "prepublish": "npm run build",
     "test": "test/run.sh",
     "test:watch": "mocha -w --compilers js:babel-register test/test.js",
     "test:single": "mocha --compilers js:babel-register test/test.js"
